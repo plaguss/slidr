@@ -1,6 +1,6 @@
 [project]
 name = "slidr"
-version = "0.0.7"
+version = "0.0.8"
 description = "Slider generator with markdown"
 readme = "README.md"
 authors = [
