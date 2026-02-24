@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="slidr-build" content="1771863617824">
+    <meta name="slidr-build" content="1771922680405">
     <title>Slide Deck</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +24,7 @@
     <style>
         /* ============================================================================
    Modern Showcase Theme for Slidr
-   
+
    A clean, contemporary theme featuring:
    - Sophisticated gradient backgrounds with subtle depth
    - Modern sans-serif typography optimized for readability
@@ -40,7 +40,7 @@
   --primary-purple: #7c3aed;
   --accent-cyan: #06b6d4;
   --accent-pink: #ec4899;
-  
+
   /* Neutral Colors */
   --text-primary: #f8fafc;
   --text-secondary: #cbd5e1;
@@ -48,12 +48,12 @@
   --bg-dark: #0f172a;
   --bg-dark-elevated: #1e293b;
   --bg-overlay: rgba(15, 23, 42, 0.8);
-  
+
   /* Code Colors */
   --code-bg: rgba(30, 41, 59, 0.6);
   --code-border: rgba(148, 163, 184, 0.2);
   --code-text: #fbbf24;
-  
+
   /* UI Elements */
   --border-subtle: rgba(203, 213, 225, 0.1);
   --shadow-soft: rgba(0, 0, 0, 0.25);
@@ -102,7 +102,7 @@ html, body {
   align-items: center;
   text-align: center;
   padding: 80px 120px;
-  background: 
+  background:
     radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.15) 0%, transparent 50%),
     radial-gradient(circle at 80% 50%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
     linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-dark-elevated) 100%);
@@ -436,7 +436,7 @@ html, body {
 
 /* Title slide (first slide) */
 .slide:first-child {
-  background: 
+  background:
     radial-gradient(circle at 30% 40%, rgba(37, 99, 235, 0.25) 0%, transparent 60%),
     radial-gradient(circle at 70% 60%, rgba(124, 58, 237, 0.25) 0%, transparent 60%),
     linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-dark-elevated) 100%);
@@ -452,11 +452,11 @@ html, body {
   .slide {
     padding: 60px 80px;
   }
-  
+
   .slide h1 {
     font-size: 3em;
   }
-  
+
   .slide h2 {
     font-size: 2em;
   }
@@ -466,30 +466,30 @@ html, body {
   html, body {
     font-size: 16px;
   }
-  
+
   .slide {
     padding: 40px 30px;
   }
-  
+
   .slide h1 {
     font-size: 2.5em;
   }
-  
+
   .slide h2 {
     font-size: 1.8em;
   }
-  
+
   .controls {
     bottom: 20px;
     right: 20px;
   }
-  
+
   .controls button {
     width: 45px;
     height: 45px;
     font-size: 20px;
   }
-  
+
   .slide-counter {
     bottom: 20px;
     left: 20px;
@@ -509,11 +509,11 @@ html, body {
     background: white !important;
     color: black !important;
   }
-  
+
   .controls, .slide-counter {
     display: none !important;
   }
-  
+
   .slide h1, .slide h2, .slide h3 {
     color: black !important;
     background: none !important;
@@ -630,7 +630,7 @@ pre code { display: block; padding: 0; border-radius: 0; line-height: 1.4; }
 </head>
 <body class="slidr-align-left">
     <div class="slides-container">
-        
+
         <div class="slide active">
             <h1>What is Slidr?</h1>
 <p>Write your presentations in <strong>markdown</strong> and let Slidr transform them into professional HTML slides.</p>
@@ -642,7 +642,7 @@ pre code { display: block; padding: 0; border-radius: 0; line-height: 1.4; }
 </ul>
 
         </div>
-        
+
         <div class="slide ">
             <h1>Quick Start</h1>
 <h2>Installation</h2>
@@ -655,7 +655,7 @@ pre code { display: block; padding: 0; border-radius: 0; line-height: 1.4; }
 <p>Your slides live in <code>deck/deck.md</code> — just edit and build!</p>
 
         </div>
-        
+
         <div class="slide ">
             <h1>Three Simple Commands</h1>
 <h2>1. Create a New Project</h2>
@@ -668,7 +668,7 @@ pre code { display: block; padding: 0; border-radius: 0; line-height: 1.4; }
 <p>Converts your markdown to <code>deck/index.html</code>.</p>
 
         </div>
-        
+
         <div class="slide ">
             <h1>Three Simple Commands</h1>
 <h2>3. Live Preview</h2>
@@ -681,82 +681,93 @@ pre code { display: block; padding: 0; border-radius: 0; line-height: 1.4; }
 </ul>
 
         </div>
-        
+
         <div class="slide ">
             <h1>Writing Slides</h1>
 <h2>It's Just Markdown</h2>
-<p>Separate slides with <code>---</code> on its own line (three dashes as a horizontal rule).</p>
+<p>Separate slides with `</p>
+
+        </div>
+
+        <div class="slide ">
+            <p>` on its own line (three dashes as a horizontal rule).</p>
 <p><strong>Example structure:</strong></p>
 <ul>
 <li>Write your first slide content</li>
-<li>Add a line with three dashes: <code>---</code></li>
+<li>Add a line with three dashes: `</li>
+</ul>
+
+        </div>
+
+        <div class="slide ">
+            <p>`</p>
+<ul>
 <li>Write your next slide content</li>
 <li>And repeat</li>
 </ul>
 <p>Each section becomes a slide. That's it!</p>
 
         </div>
-        
+
         <div class="slide ">
             <h1>Front Matter Configuration</h1>
 <p>Configure your deck with YAML front matter at the top of your markdown file.</p>
 <h2>How to Use Front Matter</h2>
 <p>Place YAML configuration at the <strong>very beginning</strong> of your markdown file:</p>
-<pre><code class="language-markdown">`---  # Remove the leading tick, is just here to exemplify
-theme: minimal-light
-title: My Presentation
-align: center
-code_highlight: monokai
-`---
-
-<span class="gh"># Text here</span>
-
-Your content
+<pre><code class="language-markdown">`
 </code></pre>
 
         </div>
-        
+
         <div class="slide ">
-            <h2>Available Front-matter Fields</h2>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>theme</code></td>
-<td>string</td>
-<td>Specify which theme to use. Built-in: <code>default</code>, <code>minimal-light</code>, <code>dark-professional</code>, <code>gradient</code>, <code>academic</code>, <code>code-focused</code>, <code>high-contrast</code>, <code>corporate-brand</code>, <code>retro</code>. Or use custom CSS path.</td>
-<td><code>theme: dark-professional</code></td>
-</tr>
-<tr>
-<td><code>title</code></td>
-<td>string</td>
-<td>HTML page title (browser tab). Default: <code>&quot;Slide Deck&quot;</code></td>
-<td><code>title: Introduction to Python</code></td>
-</tr>
-<tr>
-<td><code>align</code></td>
-<td>string</td>
-<td>Text alignment for all slides. Values: <code>left</code>, <code>center</code>, <code>right</code>. Default: <code>left</code></td>
-<td><code>align: center</code></td>
-</tr>
-<tr>
-<td><code>code_highlight</code></td>
-<td>string</td>
-<td>Syntax highlighting style. Use any Pygments style (<code>monokai</code>, <code>github</code>, <code>dracula</code>, etc.) or <code>off</code> to disable.</td>
-<td><code>code_highlight: monokai</code></td>
-</tr>
-</tbody>
-</table>
+            <h1>Remove the leading tick, is just here to exemplify</h1>
+<p>theme: minimal-light
+title: My Presentation
+align: center
+code_highlight: monokai
+`</p>
 
         </div>
-        
+
+        <div class="slide ">
+            <h1>Text here</h1>
+<p>Your content</p>
+<pre><code>
+</code></pre>
+
+        </div>
+
+        <div class="slide ">
+            <h2>Available Front-matter Fields</h2>
+<p>| Field | Type | Description | Example |
+|</p>
+
+        </div>
+
+        <div class="slide ">
+            <p>-|</p>
+
+        </div>
+
+        <div class="slide ">
+            <p>|</p>
+
+        </div>
+
+        <div class="slide ">
+            <p>-|</p>
+
+        </div>
+
+        <div class="slide ">
+            <p>|
+| <code>theme</code> | string | Specify which theme to use. Built-in: <code>default</code>, <code>minimal-light</code>, <code>dark-professional</code>, <code>gradient</code>, <code>academic</code>, <code>code-focused</code>, <code>high-contrast</code>, <code>corporate-brand</code>, <code>retro</code>. Or use custom CSS path. | <code>theme: dark-professional</code> |
+| <code>title</code> | string | HTML page title (browser tab). Default: <code>&quot;Slide Deck&quot;</code> | <code>title: Introduction to Python</code> |
+| <code>align</code> | string | Text alignment for all slides. Values: <code>left</code>, <code>center</code>, <code>right</code>. Default: <code>left</code> | <code>align: center</code> |
+| <code>code_highlight</code> | string | Syntax highlighting style. Use any Pygments style (<code>monokai</code>, <code>github</code>, <code>dracula</code>, etc.) or <code>off</code> to disable. | <code>code_highlight: monokai</code> |</p>
+
+        </div>
+
         <div class="slide ">
             <h1>Rich Text Formatting</h1>
 <p>You can use <em>italic</em>, <strong>bold</strong>, and <em><strong>bold italic</strong></em> text.</p>
@@ -767,7 +778,7 @@ Your content
 <p>All standard markdown formatting is supported, provided by <a href="https://markdown-it-py.readthedocs.io/"><code>markdown-it-py</code></a></p>
 
         </div>
-        
+
         <div class="slide ">
             <h1>Modern Typography</h1>
 <p>This theme uses <strong>contemporary web fonts</strong> for a polished look:</p>
@@ -779,7 +790,7 @@ Your content
 <p>Custom fonts are easy to integrate. Just reference them in your CSS and ensure font links are in the HTML template.</p>
 
         </div>
-        
+
         <div class="slide ">
             <h1>Lists Are Easy</h1>
 <p>Unordered lists:</p>
@@ -797,7 +808,7 @@ Your content
 </ol>
 
         </div>
-        
+
         <div class="slide ">
             <h1>Code Blocks</h1>
 <p>Syntax highlighting for code examples:</p>
@@ -810,7 +821,7 @@ Your content
 <p>It just works for technical presentations or tutorials</p>
 
         </div>
-        
+
         <div class="slide ">
             <h1>More Code Examples</h1>
 <pre><code class="language-javascript"><span class="c1">// JavaScript example</span>
@@ -824,14 +835,14 @@ Your content
 </code></pre>
 
         </div>
-        
+
         <div class="slide ">
             <h1>Math</h1>
 <p>Inline equations render seamlessly: <span class="math inline">$E = mc^2$</span> or <span class="math inline">$\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$</span></p>
 <p>Perfect for scientific and academic presentations!</p>
 
         </div>
-        
+
         <div class="slide ">
             <h1>Display Equations</h1>
 <p>Display equations get their own space:</p>
@@ -841,7 +852,7 @@ $$\int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}$$
 <p>Complex mathematical notation is fully supported via MathJax.</p>
 
         </div>
-        
+
         <div class="slide ">
             <h1>Built-in Themes</h1>
 <p>Slidr includes <strong>8 builtin themes</strong>:</p>
@@ -857,7 +868,7 @@ $$\int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}$$
 </ul>
 
         </div>
-        
+
         <div class="slide ">
             <h1>Custom Themes</h1>
 <h2>Create Your Own</h2>
@@ -873,7 +884,7 @@ $$\int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}$$
 </ul>
 
         </div>
-        
+
         <div class="slide ">
             <h1>Navigation</h1>
 <p>Typical <strong>keyboard shortcuts</strong> for presenting:</p>
@@ -886,7 +897,7 @@ $$\int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}$$
 <p><strong>Slide counter</strong> shows your progress</p>
 
         </div>
-        
+
         <div class="slide ">
             <h1>Project Structure</h1>
 <pre><code>my-presentation/
@@ -898,7 +909,7 @@ $$\int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}$$
 <p>Simple and organized. Everything in one place.</p>
 
         </div>
-        
+
         <div class="slide ">
             <h1>Why Slidr?</h1>
 <p><strong>Focus on content</strong>, not formatting:</p>
@@ -911,7 +922,7 @@ $$\int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}$$
 </ul>
 
         </div>
-        
+
         <div class="slide ">
             <h1>Features at a Glance</h1>
 <ul>
@@ -923,7 +934,7 @@ $$\int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}$$
 </ul>
 
         </div>
-        
+
         <div class="slide ">
             <h1>AI Theme Creation</h1>
 <p>Slidr includes an <strong>AI skill</strong> called <code>slidr-theme-creator</code> for generating custom CSS themes:</p>
@@ -942,7 +953,7 @@ $$\int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}$$
 </ul>
 
         </div>
-        
+
         <div class="slide ">
             <h1>Get Started Today</h1>
 <h2>Install</h2>
@@ -958,7 +969,7 @@ slidr<span class="w"> </span>serve<span class="w"> </span>deck
 <p>Start creating beautiful presentations with markdown</p>
 
         </div>
-        
+
     </div>
 
     <div class="controls">
@@ -967,7 +978,7 @@ slidr<span class="w"> </span>serve<span class="w"> </span>deck
     </div>
 
     <div class="slide-counter">
-        <span id="current-slide">1</span> / <span id="total-slides">22</span>
+        <span id="current-slide">1</span> / <span id="total-slides">30</span>
     </div>
 
     <script>
@@ -999,6 +1010,28 @@ slidr<span class="w"> </span>serve<span class="w"> </span>deck
             }
         });
     </script>
-    
+
+    <script>
+        const slidrBuildId = document.querySelector('meta[name="slidr-build"]').content;
+
+        async function checkForUpdates() {
+            try {
+                const response = await fetch(`index.html?slidr=${Date.now()}`, { cache: 'no-store' });
+                if (!response.ok) {
+                    return;
+                }
+                const html = await response.text();
+                const match = html.match(/<meta name="slidr-build" content="([^\"]+)"/);
+                if (match && match[1] !== slidrBuildId) {
+                    window.location.reload();
+                }
+            } catch (error) {
+                // Ignore transient network errors.
+            }
+        }
+
+        setInterval(checkForUpdates, 1000);
+    </script>
+
 </body>
 </html>

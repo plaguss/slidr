@@ -285,7 +285,7 @@ When creating a theme from scratch:
    - Target audience (academic, developer, executive, etc.)
    - Tone (professional, playful, minimal, bold)
    - Whether code blocks are prominent
-   
+
 2. **Select starting template** - Choose a built-in theme to customize:
    - Corporate → Use `corporate-brand.css` (has CSS variables ready)
    - Dark background → Use `dark-professional.css`
@@ -295,15 +295,15 @@ When creating a theme from scratch:
    - Academic → Use `academic.css`
    - Fun/vintage → Use `retro.css`
    - Accessibility → Use `high-contrast.css`
-   
+
 3. **Get the theme file** - Read the built-in theme from `src/slidr/assets/[theme-name].css`
-   
+
 4. **Customize** - Modify the theme CSS:
    - Replace color values with brand colors
    - Adjust fonts to brand fonts
    - Tweak spacing/sizing as needed
    - Add animations if desired
-   
+
 5. **Create file** - Write the customized CSS to a `.css` file in the user's deck directory
 
 6. **Test** - Have user build and preview: `slidr build deck --theme your-theme.css && slidr serve deck`

@@ -1,6 +1,6 @@
 /* ============================================================================
    Modern Showcase Theme for Slidr
-   
+
    A clean, contemporary theme featuring:
    - Sophisticated gradient backgrounds with subtle depth
    - Modern sans-serif typography optimized for readability
@@ -16,7 +16,7 @@
   --primary-purple: #7c3aed;
   --accent-cyan: #06b6d4;
   --accent-pink: #ec4899;
-  
+
   /* Neutral Colors */
   --text-primary: #f8fafc;
   --text-secondary: #cbd5e1;
@@ -24,12 +24,12 @@
   --bg-dark: #0f172a;
   --bg-dark-elevated: #1e293b;
   --bg-overlay: rgba(15, 23, 42, 0.8);
-  
+
   /* Code Colors */
   --code-bg: rgba(30, 41, 59, 0.6);
   --code-border: rgba(148, 163, 184, 0.2);
   --code-text: #fbbf24;
-  
+
   /* UI Elements */
   --border-subtle: rgba(203, 213, 225, 0.1);
   --shadow-soft: rgba(0, 0, 0, 0.25);
@@ -78,7 +78,7 @@ html, body {
   align-items: center;
   text-align: center;
   padding: 80px 120px;
-  background: 
+  background:
     radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.15) 0%, transparent 50%),
     radial-gradient(circle at 80% 50%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
     linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-dark-elevated) 100%);
@@ -412,7 +412,7 @@ html, body {
 
 /* Title slide (first slide) */
 .slide:first-child {
-  background: 
+  background:
     radial-gradient(circle at 30% 40%, rgba(37, 99, 235, 0.25) 0%, transparent 60%),
     radial-gradient(circle at 70% 60%, rgba(124, 58, 237, 0.25) 0%, transparent 60%),
     linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-dark-elevated) 100%);
@@ -428,11 +428,11 @@ html, body {
   .slide {
     padding: 60px 80px;
   }
-  
+
   .slide h1 {
     font-size: 3em;
   }
-  
+
   .slide h2 {
     font-size: 2em;
   }
@@ -442,30 +442,30 @@ html, body {
   html, body {
     font-size: 16px;
   }
-  
+
   .slide {
     padding: 40px 30px;
   }
-  
+
   .slide h1 {
     font-size: 2.5em;
   }
-  
+
   .slide h2 {
     font-size: 1.8em;
   }
-  
+
   .controls {
     bottom: 20px;
     right: 20px;
   }
-  
+
   .controls button {
     width: 45px;
     height: 45px;
     font-size: 20px;
   }
-  
+
   .slide-counter {
     bottom: 20px;
     left: 20px;
@@ -485,11 +485,11 @@ html, body {
     background: white !important;
     color: black !important;
   }
-  
+
   .controls, .slide-counter {
     display: none !important;
   }
-  
+
   .slide h1, .slide h2, .slide h3 {
     color: black !important;
     background: none !important;

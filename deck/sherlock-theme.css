@@ -1,6 +1,6 @@
 /* ============================================================================
    Sherlock Holmes Victorian Detective Theme
-   
+
    A moody, elegant theme inspired by Victorian-era London, featuring:
    - Deep burgundy and brown tones reminiscent of Baker Street study
    - Classic serif typography for that 19th-century feel
@@ -61,15 +61,15 @@ html, body {
   align-items: center;
   justify-content: center;
   padding: 80px 100px;
-  
+
   /* Dark Victorian gradient background */
-  background: linear-gradient(135deg, 
-    var(--victorian-burgundy) 0%, 
-    var(--leather-brown) 50%, 
+  background: linear-gradient(135deg,
+    var(--victorian-burgundy) 0%,
+    var(--leather-brown) 50%,
     var(--victorian-burgundy-light) 100%);
-  
+
   /* Subtle texture overlay for aged paper effect */
-  background-image: 
+  background-image:
     linear-gradient(135deg, var(--victorian-burgundy) 0%, var(--leather-brown) 50%, var(--victorian-burgundy-light) 100%),
     repeating-linear-gradient(
       0deg,
@@ -78,9 +78,9 @@ html, body {
       rgba(0, 0, 0, 0.03) 2px,
       rgba(0, 0, 0, 0.03) 4px
     );
-  
+
   color: var(--fog-grey);
-  
+
   /* Victorian decorative border */
   border: 2px solid var(--detective-gold);
   border-image: linear-gradient(
@@ -258,7 +258,7 @@ html, body {
   overflow-x: auto;
   text-align: left;
   max-width: 900px;
-  box-shadow: 
+  box-shadow:
     inset 0 0 30px rgba(0, 0, 0, 0.5),
     4px 4px 12px var(--mystery-shadow);
   position: relative;
@@ -436,11 +436,11 @@ body.slidr-align-right .slide h1 {
   html, body {
     font-size: 18px;
   }
-  
+
   .slide {
     padding: 60px 80px;
   }
-  
+
   .slide h1 {
     font-size: 3em;
   }
@@ -450,11 +450,11 @@ body.slidr-align-right .slide h1 {
   html, body {
     font-size: 16px;
   }
-  
+
   .slide {
     padding: 40px 50px;
   }
-  
+
   .slide h1 {
     font-size: 2.5em;
   }

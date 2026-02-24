@@ -25,16 +25,16 @@ Slidr generates HTML slides from markdown. Each slide is a `<div class="slide">`
         <div class="slide"><!-- Second slide content --></div>
         <!-- More slides... -->
     </div>
-    
+
     <div class="controls">
         <button id="prev-btn">‹</button>
         <button id="next-btn">›</button>
     </div>
-    
+
     <div class="slide-counter">
         <span id="current-slide">1</span> / <span id="total-slides">3</span>
     </div>
-    
+
     <script>/* Navigation logic */</script>
 </body>
 </html>

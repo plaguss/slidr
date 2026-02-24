@@ -753,6 +753,7 @@ The end.
 
     # Count actual slide divs (not slide-container or slide-counter)
     import re
+
     slide_divs = re.findall(r'<div class="slide (?:active|)">', content)
     assert len(slide_divs) == 7, f"Expected 7 slides, but found {len(slide_divs)}"
 
@@ -770,7 +771,7 @@ The end.
     assert "Slide 7: Final Slide" in content
 
     # Verify code blocks with --- are preserved as code, not interpreted as separators
-    assert '<code>---</code>' in content or 'return "---"' in content
+    assert "<code>---</code>" in content or 'return "---"' in content
 
     # Verify table rendering worked correctly
     assert "<table>" in content

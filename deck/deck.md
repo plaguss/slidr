@@ -137,7 +137,7 @@ All standard markdown formatting is supported, provided by [`markdown-it-py`](ht
 This theme uses **contemporary web fonts** for a polished look:
 
 - **Outfit** — Bold, geometric headings
-- **Inter** — Clean, readable body text  
+- **Inter** — Clean, readable body text
 - **JetBrains Mono** — Developer-favorite code font
 
 Custom fonts are easy to integrate. Just reference them in your CSS and ensure font links are in the HTML template.
@@ -306,7 +306,7 @@ Slidr includes an **AI skill** called `slidr-theme-creator` for generating custo
 
 The skill understands:
 - Brand color palettes and corporate identity
-- Typography and layout preferences  
+- Typography and layout preferences
 - Accessibility requirements
 - Modern design patterns
 

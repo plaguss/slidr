@@ -1,6 +1,6 @@
 # Slidr Theme Examples
 
-All example themes are now available as built-in themes in `src/slidr/assets/`. 
+All example themes are now available as built-in themes in `src/slidr/assets/`.
 
 ## Usage
 
@@ -32,44 +32,44 @@ To customize a built-in theme:
 ## Available Built-in Themes
 
 ### 1. minimal-light.css
-**Location:** `src/slidr/assets/minimal-light.css`  
-**Description:** Clean, simple, black text on white background  
+**Location:** `src/slidr/assets/minimal-light.css`
+**Description:** Clean, simple, black text on white background
 **Best for:** Professional presentations, readability-first content
 
 ### 2. dark-professional.css
-**Location:** `src/slidr/assets/dark-professional.css`  
-**Description:** Dark background with light text, blue accents  
+**Location:** `src/slidr/assets/dark-professional.css`
+**Description:** Dark background with light text, blue accents
 **Best for:** Modern tech presentations, evening/low-light venues
 
 ### 3. corporate-brand.css
-**Location:** `src/slidr/assets/corporate-brand.css`  
-**Description:** Template with CSS variables for easy brand customization  
-**Best for:** Corporate presentations, brand-aligned content  
+**Location:** `src/slidr/assets/corporate-brand.css`
+**Description:** Template with CSS variables for easy brand customization
+**Best for:** Corporate presentations, brand-aligned content
 **Note:** Edit the CSS variables at the top to match your brand colors
 
 ### 4. high-contrast.css
-**Location:** `src/slidr/assets/high-contrast.css`  
-**Description:** Maximum readability with bright colors on black  
+**Location:** `src/slidr/assets/high-contrast.css`
+**Description:** Maximum readability with bright colors on black
 **Best for:** Accessibility, large venues, vision-impaired audiences
 
 ### 5. gradient.css
-**Location:** `src/slidr/assets/gradient.css`  
-**Description:** Vibrant gradient backgrounds that change per slide  
+**Location:** `src/slidr/assets/gradient.css`
+**Description:** Vibrant gradient backgrounds that change per slide
 **Best for:** Creative presentations, eye-catching visuals
 
 ### 6. academic.css
-**Location:** `src/slidr/assets/academic.css`  
-**Description:** Professional serif theme for research presentations  
+**Location:** `src/slidr/assets/academic.css`
+**Description:** Professional serif theme for research presentations
 **Best for:** Academic conferences, research papers, formal settings
 
 ### 7. code-focused.css
-**Location:** `src/slidr/assets/code-focused.css`  
-**Description:** Dark theme optimized for code examples (VS Code-like)  
+**Location:** `src/slidr/assets/code-focused.css`
+**Description:** Dark theme optimized for code examples (VS Code-like)
 **Best for:** Developer talks, coding tutorials, technical presentations
 
 ### 8. retro.css
-**Location:** `src/slidr/assets/retro.css`  
-**Description:** Nostalgic vintage design with warm colors  
+**Location:** `src/slidr/assets/retro.css`
+**Description:** Nostalgic vintage design with warm colors
 **Best for:** Fun presentations, creative content, retro themes
 
 ---

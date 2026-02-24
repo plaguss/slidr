@@ -100,16 +100,16 @@ Content starts here...
   - Built-in themes: `default`, `dark-professional`, `minimal-light`, `corporate-brand`, `high-contrast`, `code-focused`, `academic`, `gradient`, `retro`
   - Custom themes: Path to a CSS file (e.g., `custom-theme.css`, `./themes/corporate.css`)
   - Priority order: CLI `--theme` argument > front matter `theme` > `deck/theme.css` > default theme
-  
+
 - **`title`** (string) - Set the HTML page title (appears in browser tab)
   - Default: `"Slide Deck"`
   - Example: `title: Introduction to Python`
-  
+
 - **`align`** (string) - Control text alignment for all slides
   - Valid values: `left`, `center`, `right`
   - Default: `left`
   - Example: `align: center`
-  
+
 - **`code_highlight`** (string) - Configure syntax highlighting for code blocks
   - Accepts any [Pygments style name](https://pygments.org/styles/) (e.g., `monokai`, `github`, `dracula`, `solarized-dark`, `nord`)
   - Disable highlighting: Use `off`, `false`, `no`, or `none`
