@@ -20,7 +20,7 @@ def test_list_themes_shows_all_default_themes(caplog):
     assert "Available default themes:" in log_output
 
     # Verify some known themes are listed
-    expected_themes = ["academic", "default", "dark-professional", "minimal-light"]
+    expected_themes = ["high-contrast", "default", "dark-professional", "minimal-light"]
     for theme in expected_themes:
         assert theme in log_output
 
