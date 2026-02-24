@@ -1,17 +1,22 @@
 ---
 theme: custom-theme.css
 align: left
-code_highlight: monokai
+code_highlight: dracula
 ---
 
 # What is Slidr?
 
-Write your presentations in **markdown** and let Slidr transform them into professional HTML slides.
+This is the official Slidr example presentation.
+
+Write your presentations in **markdown** and let Slidr transform them into HTML slides.
 
 - Simple markdown syntax
 - Built-in themes and easily customizable with css
 - Live preview with auto-reload
-- No complex tools required
+
+**Source:** `deck/deck.md` in the Slidr repository
+
+**GitHub:** [github.com/plaguss/slidr](https://github.com/plaguss/slidr)
 
 ---
 
@@ -19,8 +24,8 @@ Write your presentations in **markdown** and let Slidr transform them into profe
 
 ## Installation
 
-```bash
-pip install slidr
+```shell
+uv tool install slidr
 ```
 
 ## Create a New Project
@@ -81,7 +86,7 @@ Separate slides with `---` on its own line (three dashes as a horizontal rule).
 - Write your next slide content
 - And repeat
 
-Each section becomes a slide. That's it!
+Each section becomes a slide. That's it.
 
 ---
 
@@ -94,12 +99,12 @@ Configure your deck with YAML front matter at the top of your markdown file.
 Place YAML configuration at the **very beginning** of your markdown file:
 
 ```markdown
-`---  # Remove the leading tick, is just here to exemplify
+---  # Remove the leading tick, is just here to exemplify
 theme: minimal-light
 title: My Presentation
 align: center
 code_highlight: monokai
-`---
+---
 
 # Text here
 
@@ -113,7 +118,7 @@ Your content
 
 | Field | Type | Description | Example |
 |-------|------|-------------|---------|
-| `theme` | string | Specify which theme to use. Built-in: `default`, `minimal-light`, `dark-professional`, `gradient`, `academic`, `code-focused`, `high-contrast`, `corporate-brand`, `retro`. Or use custom CSS path. | `theme: dark-professional` |
+| `theme` | string | Specify which theme to use. Built-in: `default`, `minimal-light`, `dark-professional`, `high-contrast`. Or use custom CSS path. | `theme: dark-professional` |
 | `title` | string | HTML page title (browser tab). Default: `"Slide Deck"` | `title: Introduction to Python` |
 | `align` | string | Text alignment for all slides. Values: `left`, `center`, `right`. Default: `left` | `align: center` |
 | `code_highlight` | string | Syntax highlighting style. Use any Pygments style (`monokai`, `github`, `dracula`, etc.) or `off` to disable. | `code_highlight: monokai` |
@@ -150,7 +155,7 @@ Unordered lists:
 
 - Build presentations quickly
 - Write in plain markdown
-- Choose from 8+ themes
+- Choose from 4 beautiful themes
 - No HTML or CSS knowledge needed
 
 Ordered lists work too:
