@@ -58,20 +58,31 @@ html, body {
 }
 
 .slide code {
-  background: #f4f4f4;
+  background: #e8e8e8;
+  color: #1a1a1a;
   padding: 4px 8px;
   border-radius: 4px;
   font-family: 'Courier New', monospace;
   font-size: 0.9em;
+  font-weight: 500;
+  border: 1px solid #d0d0d0;
 }
 
 .slide pre {
-  background: #f8f8f8;
-  border: 1px solid #e0e0e0;
+  background: #f0f0f0;
+  border: 2px solid #d0d0d0;
   padding: 20px;
   border-radius: 8px;
   overflow-x: auto;
   margin-bottom: 30px;
+}
+
+.slide pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: #1a1a1a;
+  font-weight: normal;
 }
 
 .controls {
