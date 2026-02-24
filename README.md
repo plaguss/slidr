@@ -28,10 +28,21 @@ Create a project, build HTML, and run a local preview server.
 slidr new my-deck
 cd my-deck
 slidr build deck
-slidr serve deck -p 8000
+slidr serve deck
 ```
 
 Write your slides in `deck/deck.md` using `---` to separate them. When you build, slidr generates an `index.html` file you can open in any browser.
+
+## Example Deck
+
+Want to see Slidr in action? This repository includes an example deck, if you clone the repo, you can navigate to see the generated slides as:
+
+```bash
+# Build and serve the example
+slidr serve deck
+```
+
+View the source in [deck/deck.md](./deck/deck.md) to see how the deck is structured.
 
 ## Themes
 
@@ -48,8 +59,8 @@ theme: default
 
 | | |
 |---|---|
-| ![default](https://raw.githubusercontent.com/plaguss/slidr/main/docs/images/default.png) `default` | ![minimal-light](https://raw.githubusercontent.com/plaguss/slidr/main/docs/images/minimal-light.png) `minimal-light` |
-| ![dark-professional](https://raw.githubusercontent.com/plaguss/slidr/main/docs/images/dark-professional.png) `dark-professional` | ![high-contrast](https://raw.githubusercontent.com/plaguss/slidr/main/docs/images/high-contrast.png) `high-contrast` |
+| ![default](image.png) `default` | ![minimal-light](image-1.png) `minimal-light` |
+| ![dark-professional](image-2.png) `dark-professional` | ![high-contrast](image-3.png) `high-contrast` |
 
 ### Custom Themes
 
