@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+}
+
+.slides-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 70px;
+  background: #000000;
+  color: #ffffff;
+  text-align: center;
+  font-size: 2em;
+}
+
+.slide.active {
+  display: flex;
+}
+
+.slide h1 {
+  font-size: 3.8em;
+  margin-bottom: 40px;
+  font-weight: 900;
+  color: #ffff00;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.slide h2 {
+  font-size: 2.8em;
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: #00ffff;
+}
+
+.slide h3 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #ff00ff;
+}
+
+.slide p, .slide li {
+  font-size: 1.3em;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.slide ul, .slide ol {
+  margin-left: 60px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.slide code {
+  background: #ffff00;
+  color: #000000;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-weight: 700;
+}
+
+.slide pre {
+  background: #1a1a1a;
+  border: 3px solid #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  overflow-x: auto;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.slide strong {
+  color: #ffff00;
+  font-weight: 900;
+}
+
+.slide em {
+  color: #00ffff;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.controls {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+}
+
+.controls button {
+  padding: 15px 30px;
+  background: #ffffff;
+  color: #000000;
+  border: 4px solid #ffff00;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.5em;
+  font-weight: 900;
+  transition: all 0.2s;
+}
+
+.controls button:hover {
+  background: #ffff00;
+  border-color: #ffffff;
+}
+
+.slide-counter {
+  position: fixed;
+  top: 30px;
+  right: 40px;
+  font-size: 1.5em;
+  font-weight: 900;
+  background: #ffffff;
+  color: #000000;
+  padding: 15px 30px;
+  border: 4px solid #ffff00;
+  border-radius: 8px;
+}

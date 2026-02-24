@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="slidr-build" content="{{ build_id }}">
+    <title>{{ title }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <style>
+        {{ css_content|safe }}
+
+        body.slidr-align-left .slide {
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        body.slidr-align-center .slide {
+            align-items: center;
+            text-align: center;
+        }
+
+        body.slidr-align-right .slide {
+            align-items: flex-end;
+            text-align: right;
+        }
+    </style>
+</head>
+<body class="slidr-align-{{ alignment }}">
+    <div class="slides-container">
+        {% for slide in slides %}
+        <div class="slide {% if loop.first %}active{% endif %}">
+            {{ slide|safe }}
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="controls">
+        <button id="prev-btn" onclick="previousSlide()" aria-label="Previous slide">&lsaquo;</button>
+        <button id="next-btn" onclick="nextSlide()" aria-label="Next slide">&rsaquo;</button>
+    </div>
+
+    <div class="slide-counter">
+        <span id="current-slide">1</span> / <span id="total-slides">{{ slides|length }}</span>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            document.getElementById('current-slide').textContent = currentSlide + 1;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function previousSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                previousSlide();
+            }
+        });
+    </script>
+    {% if live_reload %}
+    <script>
+        const slidrBuildId = document.querySelector('meta[name="slidr-build"]').content;
+
+        async function checkForUpdates() {
+            try {
+                const response = await fetch(`index.html?slidr=${Date.now()}`, { cache: 'no-store' });
+                if (!response.ok) {
+                    return;
+                }
+                const html = await response.text();
+                const match = html.match(/<meta name="slidr-build" content="([^\"]+)"/);
+                if (match && match[1] !== slidrBuildId) {
+                    window.location.reload();
+                }
+            } catch (error) {
+                // Ignore transient network errors.
+            }
+        }
+
+        setInterval(checkForUpdates, 1000);
+    </script>
+    {% endif %}
+</body>
+</html>

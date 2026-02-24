@@ -1,0 +1,77 @@
+[project]
+name = "slidr"
+version = "0.0.1"
+description = "Slider generator with markdown"
+readme = "README.md"
+authors = [
+    { name = "Agustín Piqueres", email = "agustin.piqueres@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "jinja2>=3.1.6",
+    "markdown-it-py[plugins]>=4.0.0",
+    "pygments>=2.19.1",
+    "pyyaml>=6.0",
+    "rich>=13.9.4",
+    "watchfiles>=1.1.1",
+]
+
+[project.scripts]
+slidr = "slidr:main"
+
+[build-system]
+requires = ["uv_build>=0.9.26,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.5.1",
+    "pytest>=9.0.2",
+    "pytest-cov>=6.0.0",
+    "pytest-mock>=3.14.0",
+    "ruff>=0.15.1",
+    "ty>=0.0.18",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "-v",
+    "--strict-markers",
+    "--tb=short",
+    "--cov=slidr",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py314"
+extend-exclude = [
+    ".venv",
+    "build",
+    "dist",
+    "htmlcov",
+]
+
+[tool.ruff.lint]
+select = [
+    "B",
+    "C4",
+    "DTZ",
+    "E",
+    "F",
+    "I",
+    "ISC",
+    "N",
+    "RUF",
+    "SIM",
+    "UP",
+    "W",
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["slidr"]

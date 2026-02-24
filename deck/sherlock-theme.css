@@ -1,0 +1,461 @@
+/* ============================================================================
+   Sherlock Holmes Victorian Detective Theme
+   
+   A moody, elegant theme inspired by Victorian-era London, featuring:
+   - Deep burgundy and brown tones reminiscent of Baker Street study
+   - Classic serif typography for that 19th-century feel
+   - Aged parchment accents and golden highlights
+   - Mysterious, intellectual atmosphere
+   ============================================================================ */
+
+/* ===== CSS Custom Properties (Theme Variables) ===== */
+:root {
+  /* Victorian Color Palette */
+  --victorian-burgundy: #2d0e0e;
+  --victorian-burgundy-light: #5a1a1a;
+  --leather-brown: #3e2723;
+  --leather-brown-light: #4a3228;
+  --aged-parchment: #f4ecd8;
+  --parchment-dark: #d4c5a9;
+  --fog-grey: #e8e5db;
+  --fog-grey-dark: #b8b3a6;
+  --detective-gold: #d4af37;
+  --detective-gold-dim: #c5a028;
+  --mystery-shadow: rgba(0, 0, 0, 0.7);
+}
+
+/* ===== Global Reset ===== */
+*, html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Georgia', 'Garamond', 'Times New Roman', serif;
+  font-size: 20px;
+  line-height: 1.6;
+  background: var(--victorian-burgundy);
+}
+
+/* ===== Slides Container ===== */
+.slides-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ===== Individual Slide ===== */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 100px;
+  
+  /* Dark Victorian gradient background */
+  background: linear-gradient(135deg, 
+    var(--victorian-burgundy) 0%, 
+    var(--leather-brown) 50%, 
+    var(--victorian-burgundy-light) 100%);
+  
+  /* Subtle texture overlay for aged paper effect */
+  background-image: 
+    linear-gradient(135deg, var(--victorian-burgundy) 0%, var(--leather-brown) 50%, var(--victorian-burgundy-light) 100%),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.03) 2px,
+      rgba(0, 0, 0, 0.03) 4px
+    );
+  
+  color: var(--fog-grey);
+  
+  /* Victorian decorative border */
+  border: 2px solid var(--detective-gold);
+  border-image: linear-gradient(
+    45deg,
+    var(--detective-gold-dim) 0%,
+    var(--detective-gold) 50%,
+    var(--detective-gold-dim) 100%
+  ) 1;
+  box-shadow: inset 0 0 60px var(--mystery-shadow);
+}
+
+.slide.active {
+  display: flex;
+  animation: mysterySolve 0.6s ease-out;
+}
+
+@keyframes mysterySolve {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* ===== Typography ===== */
+
+/* Main heading - styled like a case file title */
+.slide h1 {
+  font-size: 3.5em;
+  font-weight: 700;
+  color: var(--detective-gold);
+  margin: 0 0 0.5em 0;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-shadow: 2px 2px 4px var(--mystery-shadow);
+  font-variant: small-caps;
+  border-bottom: 3px double var(--detective-gold-dim);
+  padding-bottom: 0.3em;
+}
+
+.slide h2 {
+  font-size: 2.2em;
+  font-weight: 600;
+  color: var(--parchment-dark);
+  margin: 0.8em 0 0.5em 0;
+  text-shadow: 1px 1px 3px var(--mystery-shadow);
+  font-style: italic;
+}
+
+.slide h3 {
+  font-size: 1.6em;
+  font-weight: 600;
+  color: var(--fog-grey-dark);
+  margin: 0.7em 0 0.4em 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 1.4em;
+}
+
+.slide p {
+  font-size: 1.15em;
+  line-height: 1.8;
+  margin: 0.6em 0;
+  max-width: 900px;
+  color: var(--fog-grey);
+}
+
+/* ===== Emphasis ===== */
+.slide strong {
+  font-weight: 700;
+  color: var(--detective-gold);
+}
+
+.slide em {
+  font-style: italic;
+  color: var(--aged-parchment);
+}
+
+/* ===== Links ===== */
+.slide a {
+  color: var(--detective-gold);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  transition: all 0.3s ease;
+}
+
+.slide a:hover {
+  color: var(--aged-parchment);
+  text-decoration-style: solid;
+  text-shadow: 0 0 8px var(--detective-gold);
+}
+
+/* ===== Lists - styled like investigation notes ===== */
+.slide ul,
+.slide ol {
+  text-align: left;
+  margin: 1em 0;
+  padding-left: 2em;
+  max-width: 800px;
+}
+
+.slide ul {
+  list-style: none;
+}
+
+.slide ul li::before {
+  content: "▸";
+  color: var(--detective-gold);
+  font-weight: bold;
+  display: inline-block;
+  width: 1.2em;
+  margin-left: -1.2em;
+  font-size: 1.2em;
+}
+
+.slide ol {
+  list-style: decimal;
+  list-style-position: outside;
+}
+
+.slide li {
+  font-size: 1.1em;
+  line-height: 1.8;
+  margin: 0.5em 0;
+  color: var(--fog-grey);
+}
+
+/* ===== Blockquotes - styled like Watson's journal entries ===== */
+.slide blockquote {
+  border-left: 4px solid var(--detective-gold);
+  padding: 1em 1.5em;
+  margin: 1.5em 0;
+  background: rgba(0, 0, 0, 0.3);
+  font-style: italic;
+  color: var(--aged-parchment);
+  max-width: 800px;
+  position: relative;
+  box-shadow: 3px 3px 10px var(--mystery-shadow);
+}
+
+.slide blockquote::before {
+  content: """;
+  position: absolute;
+  left: 10px;
+  top: -10px;
+  font-size: 4em;
+  color: var(--detective-gold-dim);
+  opacity: 0.4;
+  font-family: Georgia, serif;
+}
+
+/* ===== Inline Code - like typewriter text ===== */
+.slide code {
+  font-family: 'Courier New', 'Courier', monospace;
+  background: rgba(0, 0, 0, 0.4);
+  color: var(--detective-gold);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+/* ===== Code Blocks - styled like old case files ===== */
+.slide pre {
+  background: var(--leather-brown);
+  border: 2px solid var(--detective-gold-dim);
+  border-radius: 6px;
+  padding: 25px 30px;
+  margin: 1.5em 0;
+  overflow-x: auto;
+  text-align: left;
+  max-width: 900px;
+  box-shadow: 
+    inset 0 0 30px rgba(0, 0, 0, 0.5),
+    4px 4px 12px var(--mystery-shadow);
+  position: relative;
+}
+
+.slide pre::before {
+  content: "⌘ CASE FILE";
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 0.7em;
+  color: var(--detective-gold-dim);
+  opacity: 0.6;
+  letter-spacing: 0.1em;
+  font-family: Georgia, serif;
+}
+
+.slide pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--aged-parchment);
+  font-size: 0.85em;
+  line-height: 1.6;
+}
+
+/* ===== Images ===== */
+.slide img {
+  max-width: 80%;
+  max-height: 500px;
+  margin: 1em auto;
+  border: 3px solid var(--detective-gold-dim);
+  border-radius: 4px;
+  box-shadow: 0 8px 20px var(--mystery-shadow);
+  filter: sepia(0.2);
+}
+
+/* ===== Tables - styled like evidence logs ===== */
+.slide table {
+  border-collapse: collapse;
+  margin: 1.5em auto;
+  max-width: 900px;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 4px 4px 12px var(--mystery-shadow);
+}
+
+.slide th,
+.slide td {
+  border: 1px solid var(--detective-gold-dim);
+  padding: 12px 20px;
+  text-align: left;
+}
+
+.slide th {
+  background: var(--leather-brown);
+  color: var(--detective-gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.9em;
+}
+
+.slide td {
+  color: var(--fog-grey);
+}
+
+/* ===== Math Equations - styled for intellectual rigor ===== */
+.slide .math-inline {
+  color: var(--aged-parchment);
+}
+
+.slide .math-display {
+  color: var(--aged-parchment);
+  margin: 1.5em 0;
+  padding: 1em;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+}
+
+/* ===== Navigation Controls ===== */
+.controls {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  gap: 15px;
+}
+
+.controls button {
+  background: linear-gradient(135deg, var(--detective-gold-dim), var(--detective-gold));
+  color: var(--victorian-burgundy);
+  border: 2px solid var(--detective-gold);
+  padding: 12px 24px;
+  font-size: 1em;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: Georgia, serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 10px var(--mystery-shadow);
+}
+
+.controls button:hover {
+  background: linear-gradient(135deg, var(--detective-gold), var(--aged-parchment));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px var(--mystery-shadow);
+}
+
+.controls button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px var(--mystery-shadow);
+}
+
+.controls button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ===== Slide Counter - styled like a page number ===== */
+.slide-counter {
+  position: fixed;
+  bottom: 40px;
+  right: 50px;
+  z-index: 1000;
+  font-size: 1em;
+  color: var(--detective-gold);
+  font-weight: 600;
+  font-family: Georgia, serif;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid var(--detective-gold-dim);
+  box-shadow: 0 4px 10px var(--mystery-shadow);
+}
+
+/* ===== Alignment Overrides ===== */
+
+/* Left-aligned slides - for detailed case notes */
+body.slidr-align-left .slide {
+  align-items: flex-start;
+  text-align: left;
+  justify-content: flex-start;
+  padding-left: 120px;
+}
+
+body.slidr-align-left .slide h1 {
+  text-align: left;
+}
+
+/* Center-aligned slides - default detective presentation */
+body.slidr-align-center .slide {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+/* Right-aligned slides */
+body.slidr-align-right .slide {
+  align-items: flex-end;
+  text-align: right;
+  justify-content: flex-start;
+  padding-right: 120px;
+}
+
+body.slidr-align-right .slide h1 {
+  text-align: right;
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 1200px) {
+  html, body {
+    font-size: 18px;
+  }
+  
+  .slide {
+    padding: 60px 80px;
+  }
+  
+  .slide h1 {
+    font-size: 3em;
+  }
+}
+
+@media (max-width: 768px) {
+  html, body {
+    font-size: 16px;
+  }
+  
+  .slide {
+    padding: 40px 50px;
+  }
+  
+  .slide h1 {
+    font-size: 2.5em;
+  }
+}

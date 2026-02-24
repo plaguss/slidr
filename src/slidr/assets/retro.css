@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Courier New', 'Courier', monospace;
+  background: #f4e8d0;
+}
+
+.slides-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 70px;
+  background: #f4e8d0;
+  color: #3d2817;
+  text-align: center;
+  font-size: 1.8em;
+  border: 20px solid #8b4513;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+.slide.active {
+  display: flex;
+}
+
+.slide h1 {
+  font-size: 3.5em;
+  margin-bottom: 30px;
+  font-weight: 900;
+  color: #8b4513;
+  text-shadow: 3px 3px 0 #d4a574;
+  font-family: 'Georgia', serif;
+  letter-spacing: 2px;
+}
+
+.slide h2 {
+  font-size: 2.5em;
+  margin-bottom: 25px;
+  font-weight: 700;
+  color: #a0522d;
+  text-decoration: underline;
+  text-decoration-style: double;
+}
+
+.slide h3 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #6b4423;
+}
+
+.slide p, .slide li {
+  font-size: 1.2em;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.slide ul, .slide ol {
+  margin-left: 50px;
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.slide code {
+  background: #e8d5b7;
+  color: #5d3a1a;
+  padding: 4px 10px;
+  border-radius: 3px;
+  border: 1px dashed #8b4513;
+  font-family: 'Courier New', monospace;
+}
+
+.slide pre {
+  background: #e8d5b7;
+  border: 3px double #8b4513;
+  padding: 20px;
+  border-radius: 0;
+  overflow-x: auto;
+  text-align: left;
+  margin-bottom: 25px;
+  box-shadow: 5px 5px 0 #d4a574;
+}
+
+.slide blockquote {
+  border-left: 5px solid #8b4513;
+  border-right: 5px solid #8b4513;
+  padding: 20px;
+  font-style: italic;
+  margin-bottom: 25px;
+  background: #efe0c8;
+}
+
+.slide strong {
+  color: #a0522d;
+  font-weight: 900;
+}
+
+.controls {
+  position: fixed;
+  bottom: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+}
+
+.controls button {
+  padding: 12px 24px;
+  background: #8b4513;
+  color: #f4e8d0;
+  border: 3px solid #3d2817;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 1.3em;
+  font-weight: 900;
+  font-family: 'Courier New', monospace;
+  box-shadow: 4px 4px 0 #3d2817;
+  transition: all 0.1s;
+}
+
+.controls button:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #3d2817;
+}
+
+.slide-counter {
+  position: fixed;
+  top: 35px;
+  right: 45px;
+  font-size: 1.3em;
+  font-weight: 900;
+  background: #8b4513;
+  color: #f4e8d0;
+  padding: 15px 30px;
+  border: 3px solid #3d2817;
+  box-shadow: 4px 4px 0 #3d2817;
+  font-family: 'Courier New', monospace;
+}

@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="slidr-build" content="1771863617824">
+    <title>Slide Deck</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <style>
+        /* ============================================================================
+   Modern Showcase Theme for Slidr
+   
+   A clean, contemporary theme featuring:
+   - Sophisticated gradient backgrounds with subtle depth
+   - Modern sans-serif typography optimized for readability
+   - Elegant spacing and visual hierarchy
+   - Smooth animations and polished UI elements
+   - Professional color palette suitable for technical presentations
+   ============================================================================ */
+
+/* ===== CSS Custom Properties (Theme Variables) ===== */
+:root {
+  /* Modern Color Palette */
+  --primary-blue: #2563eb;
+  --primary-purple: #7c3aed;
+  --accent-cyan: #06b6d4;
+  --accent-pink: #ec4899;
+  
+  /* Neutral Colors */
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --bg-dark: #0f172a;
+  --bg-dark-elevated: #1e293b;
+  --bg-overlay: rgba(15, 23, 42, 0.8);
+  
+  /* Code Colors */
+  --code-bg: rgba(30, 41, 59, 0.6);
+  --code-border: rgba(148, 163, 184, 0.2);
+  --code-text: #fbbf24;
+  
+  /* UI Elements */
+  --border-subtle: rgba(203, 213, 225, 0.1);
+  --shadow-soft: rgba(0, 0, 0, 0.25);
+}
+
+/* ===== Global Reset ===== */
+*, html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+  background: var(--bg-dark);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+}
+
+/* ===== Slides Container ===== */
+.slides-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+}
+
+/* ===== Individual Slide ===== */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 80px 120px;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+    linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-dark-elevated) 100%);
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Active slide */
+.slide.active {
+  display: flex;
+  animation: slideIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Typography ===== */
+
+/* Headings */
+.slide h1 {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  font-size: 3.5em;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 0.5em 0;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+.slide h2 {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  font-size: 2.2em;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0.8em 0 0.4em 0;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.slide h3 {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  font-size: 1.6em;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0.6em 0 0.3em 0;
+  color: var(--text-secondary);
+}
+
+.slide h4, .slide h5, .slide h6 {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  font-weight: 600;
+  margin: 0.5em 0 0.25em 0;
+  color: var(--text-secondary);
+}
+
+/* Paragraphs */
+.slide p {
+  font-size: 1.2em;
+  line-height: 1.8;
+  margin: 0.6em 0;
+  color: var(--text-secondary);
+  max-width: 900px;
+}
+
+/* Strong and emphasis */
+.slide strong {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.slide em {
+  font-style: italic;
+  color: var(--accent-cyan);
+}
+
+/* ===== Links ===== */
+.slide a {
+  color: var(--accent-cyan);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.slide a:hover {
+  color: var(--primary-blue);
+  border-bottom-color: var(--primary-blue);
+}
+
+/* ===== Lists ===== */
+.slide ul, .slide ol {
+  text-align: left;
+  margin: 1em 0;
+  padding-left: 0;
+  list-style-position: inside;
+  max-width: 800px;
+}
+
+.slide li {
+  font-size: 1.2em;
+  line-height: 1.8;
+  margin: 0.5em 0;
+  color: var(--text-secondary);
+  padding-left: 0.5em;
+}
+
+.slide ul li {
+  list-style-type: none;
+  position: relative;
+  padding-left: 1.8em;
+}
+
+.slide ul li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--accent-cyan);
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.slide ol {
+  counter-reset: ordered-list;
+}
+
+.slide ol li {
+  list-style-type: none;
+  counter-increment: ordered-list;
+  position: relative;
+  padding-left: 1.8em;
+}
+
+.slide ol li::before {
+  content: counter(ordered-list) ".";
+  position: absolute;
+  left: 0;
+  color: var(--accent-cyan);
+  font-weight: 700;
+}
+
+/* ===== Blockquotes ===== */
+.slide blockquote {
+  margin: 1.5em 0;
+  padding: 1.5em 2em;
+  background: var(--code-bg);
+  border-left: 4px solid var(--accent-cyan);
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-style: italic;
+  color: var(--text-primary);
+  max-width: 800px;
+  backdrop-filter: blur(10px);
+}
+
+.slide blockquote p {
+  margin: 0;
+  color: var(--text-primary);
+}
+
+/* ===== Code ===== */
+.slide code {
+  background: var(--code-bg);
+  color: var(--code-text);
+  padding: 0.25em 0.6em;
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
+  font-size: 0.9em;
+  font-weight: 500;
+  border: 1px solid var(--code-border);
+}
+
+.slide pre {
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: 12px;
+  padding: 2em;
+  margin: 1.5em 0;
+  overflow-x: auto;
+  text-align: left;
+  max-width: 900px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px var(--shadow-soft);
+}
+
+.slide pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 0.95em;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+/* ===== Images ===== */
+.slide img {
+  max-width: 80%;
+  max-height: 60vh;
+  margin: 1.5em auto;
+  border-radius: 12px;
+  box-shadow: 0 12px 48px var(--shadow-soft);
+  display: block;
+}
+
+/* ===== Tables ===== */
+.slide table {
+  border-collapse: collapse;
+  margin: 1.5em auto;
+  max-width: 900px;
+  background: var(--code-bg);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.slide th, .slide td {
+  padding: 0.8em 1.2em;
+  text-align: left;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.slide th {
+  background: rgba(37, 99, 235, 0.2);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.slide td {
+  color: var(--text-secondary);
+}
+
+/* ===== Horizontal Rule ===== */
+.slide hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+  margin: 2em auto;
+  max-width: 400px;
+}
+
+/* ===== Navigation Controls ===== */
+.controls {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  gap: 12px;
+  z-index: 1000;
+}
+
+.controls button {
+  background: var(--bg-overlay);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 16px var(--shadow-soft);
+}
+
+.controls button:hover {
+  background: var(--primary-blue);
+  border-color: var(--primary-blue);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(37, 99, 235, 0.4);
+}
+
+.controls button:active {
+  transform: translateY(0);
+}
+
+.controls button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.controls button:disabled:hover {
+  background: var(--bg-overlay);
+  border-color: var(--border-subtle);
+  color: var(--text-secondary);
+  transform: translateY(0);
+  box-shadow: 0 4px 16px var(--shadow-soft);
+}
+
+/* ===== Slide Counter ===== */
+.slide-counter {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  background: var(--bg-overlay);
+  color: var(--text-secondary);
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-size: 0.9em;
+  font-weight: 600;
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 16px var(--shadow-soft);
+  z-index: 1000;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ===== Math Equations (MathJax/KaTeX) ===== */
+.slide .MathJax,
+.slide .katex {
+  font-size: 1.2em;
+  color: var(--text-primary);
+}
+
+.slide .katex-display {
+  margin: 1.5em 0;
+}
+
+/* ===== Special Slide Classes ===== */
+
+/* Title slide (first slide) */
+.slide:first-child {
+  background: 
+    radial-gradient(circle at 30% 40%, rgba(37, 99, 235, 0.25) 0%, transparent 60%),
+    radial-gradient(circle at 70% 60%, rgba(124, 58, 237, 0.25) 0%, transparent 60%),
+    linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-dark-elevated) 100%);
+}
+
+.slide:first-child h1 {
+  font-size: 4.5em;
+  margin-bottom: 0.3em;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 1200px) {
+  .slide {
+    padding: 60px 80px;
+  }
+  
+  .slide h1 {
+    font-size: 3em;
+  }
+  
+  .slide h2 {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 768px) {
+  html, body {
+    font-size: 16px;
+  }
+  
+  .slide {
+    padding: 40px 30px;
+  }
+  
+  .slide h1 {
+    font-size: 2.5em;
+  }
+  
+  .slide h2 {
+    font-size: 1.8em;
+  }
+  
+  .controls {
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .controls button {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+  
+  .slide-counter {
+    bottom: 20px;
+    left: 20px;
+    font-size: 0.8em;
+    padding: 10px 16px;
+  }
+}
+
+/* ===== Print Styles ===== */
+@media print {
+  .slide {
+    display: block !important;
+    page-break-after: always;
+    position: relative;
+    height: auto;
+    padding: 40px;
+    background: white !important;
+    color: black !important;
+  }
+  
+  .controls, .slide-counter {
+    display: none !important;
+  }
+  
+  .slide h1, .slide h2, .slide h3 {
+    color: black !important;
+    background: none !important;
+    -webkit-text-fill-color: initial !important;
+  }
+}
+
+
+/* Pygments syntax highlighting */
+pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+pre code .hll { background-color: #49483e }
+pre code { background: #272822; color: #F8F8F2 }
+pre code .c { color: #959077 } /* Comment */
+pre code .err { color: #ED007E; background-color: #1E0010 } /* Error */
+pre code .esc { color: #F8F8F2 } /* Escape */
+pre code .g { color: #F8F8F2 } /* Generic */
+pre code .k { color: #66D9EF } /* Keyword */
+pre code .l { color: #AE81FF } /* Literal */
+pre code .n { color: #F8F8F2 } /* Name */
+pre code .o { color: #FF4689 } /* Operator */
+pre code .x { color: #F8F8F2 } /* Other */
+pre code .p { color: #F8F8F2 } /* Punctuation */
+pre code .ch { color: #959077 } /* Comment.Hashbang */
+pre code .cm { color: #959077 } /* Comment.Multiline */
+pre code .cp { color: #959077 } /* Comment.Preproc */
+pre code .cpf { color: #959077 } /* Comment.PreprocFile */
+pre code .c1 { color: #959077 } /* Comment.Single */
+pre code .cs { color: #959077 } /* Comment.Special */
+pre code .gd { color: #FF4689 } /* Generic.Deleted */
+pre code .ge { color: #F8F8F2; font-style: italic } /* Generic.Emph */
+pre code .ges { color: #F8F8F2; font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+pre code .gr { color: #F8F8F2 } /* Generic.Error */
+pre code .gh { color: #F8F8F2 } /* Generic.Heading */
+pre code .gi { color: #A6E22E } /* Generic.Inserted */
+pre code .go { color: #66D9EF } /* Generic.Output */
+pre code .gp { color: #FF4689; font-weight: bold } /* Generic.Prompt */
+pre code .gs { color: #F8F8F2; font-weight: bold } /* Generic.Strong */
+pre code .gu { color: #959077 } /* Generic.Subheading */
+pre code .gt { color: #F8F8F2 } /* Generic.Traceback */
+pre code .kc { color: #66D9EF } /* Keyword.Constant */
+pre code .kd { color: #66D9EF } /* Keyword.Declaration */
+pre code .kn { color: #FF4689 } /* Keyword.Namespace */
+pre code .kp { color: #66D9EF } /* Keyword.Pseudo */
+pre code .kr { color: #66D9EF } /* Keyword.Reserved */
+pre code .kt { color: #66D9EF } /* Keyword.Type */
+pre code .ld { color: #E6DB74 } /* Literal.Date */
+pre code .m { color: #AE81FF } /* Literal.Number */
+pre code .s { color: #E6DB74 } /* Literal.String */
+pre code .na { color: #A6E22E } /* Name.Attribute */
+pre code .nb { color: #F8F8F2 } /* Name.Builtin */
+pre code .nc { color: #A6E22E } /* Name.Class */
+pre code .no { color: #66D9EF } /* Name.Constant */
+pre code .nd { color: #A6E22E } /* Name.Decorator */
+pre code .ni { color: #F8F8F2 } /* Name.Entity */
+pre code .ne { color: #A6E22E } /* Name.Exception */
+pre code .nf { color: #A6E22E } /* Name.Function */
+pre code .nl { color: #F8F8F2 } /* Name.Label */
+pre code .nn { color: #F8F8F2 } /* Name.Namespace */
+pre code .nx { color: #A6E22E } /* Name.Other */
+pre code .py { color: #F8F8F2 } /* Name.Property */
+pre code .nt { color: #FF4689 } /* Name.Tag */
+pre code .nv { color: #F8F8F2 } /* Name.Variable */
+pre code .ow { color: #FF4689 } /* Operator.Word */
+pre code .pm { color: #F8F8F2 } /* Punctuation.Marker */
+pre code .w { color: #F8F8F2 } /* Text.Whitespace */
+pre code .mb { color: #AE81FF } /* Literal.Number.Bin */
+pre code .mf { color: #AE81FF } /* Literal.Number.Float */
+pre code .mh { color: #AE81FF } /* Literal.Number.Hex */
+pre code .mi { color: #AE81FF } /* Literal.Number.Integer */
+pre code .mo { color: #AE81FF } /* Literal.Number.Oct */
+pre code .sa { color: #E6DB74 } /* Literal.String.Affix */
+pre code .sb { color: #E6DB74 } /* Literal.String.Backtick */
+pre code .sc { color: #E6DB74 } /* Literal.String.Char */
+pre code .dl { color: #E6DB74 } /* Literal.String.Delimiter */
+pre code .sd { color: #E6DB74 } /* Literal.String.Doc */
+pre code .s2 { color: #E6DB74 } /* Literal.String.Double */
+pre code .se { color: #AE81FF } /* Literal.String.Escape */
+pre code .sh { color: #E6DB74 } /* Literal.String.Heredoc */
+pre code .si { color: #E6DB74 } /* Literal.String.Interpol */
+pre code .sx { color: #E6DB74 } /* Literal.String.Other */
+pre code .sr { color: #E6DB74 } /* Literal.String.Regex */
+pre code .s1 { color: #E6DB74 } /* Literal.String.Single */
+pre code .ss { color: #E6DB74 } /* Literal.String.Symbol */
+pre code .bp { color: #F8F8F2 } /* Name.Builtin.Pseudo */
+pre code .fm { color: #A6E22E } /* Name.Function.Magic */
+pre code .vc { color: #F8F8F2 } /* Name.Variable.Class */
+pre code .vg { color: #F8F8F2 } /* Name.Variable.Global */
+pre code .vi { color: #F8F8F2 } /* Name.Variable.Instance */
+pre code .vm { color: #F8F8F2 } /* Name.Variable.Magic */
+pre code .il { color: #AE81FF } /* Literal.Number.Integer.Long */
+
+/* Slidr code block fixes */
+pre code { display: block; padding: 0; border-radius: 0; line-height: 1.4; }
+
+        body.slidr-align-left .slide {
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        body.slidr-align-center .slide {
+            align-items: center;
+            text-align: center;
+        }
+
+        body.slidr-align-right .slide {
+            align-items: flex-end;
+            text-align: right;
+        }
+    </style>
+</head>
+<body class="slidr-align-left">
+    <div class="slides-container">
+        
+        <div class="slide active">
+            <h1>What is Slidr?</h1>
+<p>Write your presentations in <strong>markdown</strong> and let Slidr transform them into professional HTML slides.</p>
+<ul>
+<li>Simple markdown syntax</li>
+<li>Built-in themes and easily customizable with css</li>
+<li>Live preview with auto-reload</li>
+<li>No complex tools required</li>
+</ul>
+
+        </div>
+        
+        <div class="slide ">
+            <h1>Quick Start</h1>
+<h2>Installation</h2>
+<pre><code class="language-bash">pip<span class="w"> </span>install<span class="w"> </span>slidr
+</code></pre>
+<h2>Create a New Project</h2>
+<pre><code class="language-bash">slidr<span class="w"> </span>new<span class="w"> </span>my-presentation
+<span class="nb">cd</span><span class="w"> </span>my-presentation
+</code></pre>
+<p>Your slides live in <code>deck/deck.md</code> — just edit and build!</p>
+
+        </div>
+        
+        <div class="slide ">
+            <h1>Three Simple Commands</h1>
+<h2>1. Create a New Project</h2>
+<pre><code class="language-bash">slidr<span class="w"> </span>new<span class="w"> </span>&lt;project-name&gt;
+</code></pre>
+<p>Scaffolds a new presentation directory with starter files.</p>
+<h2>2. Build HTML Slides</h2>
+<pre><code class="language-bash">slidr<span class="w"> </span>build<span class="w"> </span>deck
+</code></pre>
+<p>Converts your markdown to <code>deck/index.html</code>.</p>
+
+        </div>
+        
+        <div class="slide ">
+            <h1>Three Simple Commands</h1>
+<h2>3. Live Preview</h2>
+<pre><code class="language-bash">slidr<span class="w"> </span>serve<span class="w"> </span>deck
+</code></pre>
+<p>Launches a local server with <strong>live reload</strong> — edit your markdown and see changes instantly.</p>
+<ul>
+<li>Default: <code>http://localhost:8000</code></li>
+<li>Custom port: <code>slidr serve deck -p 3000</code></li>
+</ul>
+
+        </div>
+        
+        <div class="slide ">
+            <h1>Writing Slides</h1>
+<h2>It's Just Markdown</h2>
+<p>Separate slides with <code>---</code> on its own line (three dashes as a horizontal rule).</p>
+<p><strong>Example structure:</strong></p>
+<ul>
+<li>Write your first slide content</li>
+<li>Add a line with three dashes: <code>---</code></li>
+<li>Write your next slide content</li>
+<li>And repeat</li>
+</ul>
+<p>Each section becomes a slide. That's it!</p>
+
+        </div>
+        
+        <div class="slide ">
+            <h1>Front Matter Configuration</h1>
+<p>Configure your deck with YAML front matter at the top of your markdown file.</p>
+<h2>How to Use Front Matter</h2>
+<p>Place YAML configuration at the <strong>very beginning</strong> of your markdown file:</p>
+<pre><code class="language-markdown">`---  # Remove the leading tick, is just here to exemplify
+theme: minimal-light
+title: My Presentation
+align: center
+code_highlight: monokai
+`---
+
+<span class="gh"># Text here</span>
+
+Your content
+</code></pre>
+
+        </div>
+        
+        <div class="slide ">
+            <h2>Available Front-matter Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>theme</code></td>
+<td>string</td>
+<td>Specify which theme to use. Built-in: <code>default</code>, <code>minimal-light</code>, <code>dark-professional</code>, <code>gradient</code>, <code>academic</code>, <code>code-focused</code>, <code>high-contrast</code>, <code>corporate-brand</code>, <code>retro</code>. Or use custom CSS path.</td>
+<td><code>theme: dark-professional</code></td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td>string</td>
+<td>HTML page title (browser tab). Default: <code>&quot;Slide Deck&quot;</code></td>
+<td><code>title: Introduction to Python</code></td>
+</tr>
+<tr>
+<td><code>align</code></td>
+<td>string</td>
+<td>Text alignment for all slides. Values: <code>left</code>, <code>center</code>, <code>right</code>. Default: <code>left</code></td>
+<td><code>align: center</code></td>
+</tr>
+<tr>
+<td><code>code_highlight</code></td>
+<td>string</td>
+<td>Syntax highlighting style. Use any Pygments style (<code>monokai</code>, <code>github</code>, <code>dracula</code>, etc.) or <code>off</code> to disable.</td>
+<td><code>code_highlight: monokai</code></td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+        
+        <div class="slide ">
+            <h1>Rich Text Formatting</h1>
+<p>You can use <em>italic</em>, <strong>bold</strong>, and <em><strong>bold italic</strong></em> text.</p>
+<p>Inline code like <code>slidr build deck</code> renders beautifully.</p>
+<blockquote>
+<p>Blockquotes stand out with distinctive styling for emphasis and visual interest.</p>
+</blockquote>
+<p>All standard markdown formatting is supported, provided by <a href="https://markdown-it-py.readthedocs.io/"><code>markdown-it-py</code></a></p>
+
+        </div>
+        
+        <div class="slide ">
+            <h1>Modern Typography</h1>
+<p>This theme uses <strong>contemporary web fonts</strong> for a polished look:</p>
+<ul>
+<li><strong>Outfit</strong> — Bold, geometric headings</li>
+<li><strong>Inter</strong> — Clean, readable body text</li>
+<li><strong>JetBrains Mono</strong> — Developer-favorite code font</li>
+</ul>
+<p>Custom fonts are easy to integrate. Just reference them in your CSS and ensure font links are in the HTML template.</p>
+
+        </div>
+        
+        <div class="slide ">
+            <h1>Lists Are Easy</h1>
+<p>Unordered lists:</p>
+<ul>
+<li>Build presentations quickly</li>
+<li>Write in plain markdown</li>
+<li>Choose from 8+ themes</li>
+<li>No HTML or CSS knowledge needed</li>
+</ul>
+<p>Ordered lists work too:</p>
+<ol>
+<li>Write your content</li>
+<li>Run <code>slidr build</code></li>
+<li>Present with confidence</li>
+</ol>
+
+        </div>
+        
+        <div class="slide ">
+            <h1>Code Blocks</h1>
+<p>Syntax highlighting for code examples:</p>
+<pre><code class="language-python"><span class="k">def</span><span class="w"> </span><span class="nf">build_presentation</span><span class="p">(</span><span class="n">deck_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate HTML slides from markdown.&quot;&quot;&quot;</span>
+    <span class="n">slides</span> <span class="o">=</span> <span class="n">parse_markdown</span><span class="p">(</span><span class="n">deck_path</span> <span class="o">/</span> <span class="s2">&quot;deck.md&quot;</span><span class="p">)</span>
+    <span class="n">theme</span> <span class="o">=</span> <span class="n">resolve_theme_path</span><span class="p">(</span><span class="n">deck_path</span><span class="p">)</span>
+    <span class="n">render_slides</span><span class="p">(</span><span class="n">slides</span><span class="p">,</span> <span class="n">theme</span><span class="p">)</span>
+</code></pre>
+<p>It just works for technical presentations or tutorials</p>
+
+        </div>
+        
+        <div class="slide ">
+            <h1>More Code Examples</h1>
+<pre><code class="language-javascript"><span class="c1">// JavaScript example</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">slidr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;slidr&#39;</span><span class="p">);</span>
+
+<span class="nx">slidr</span><span class="p">.</span><span class="nx">build</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">input</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;deck.md&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">theme</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;dark-professional&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">output</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;index.html&#39;</span>
+<span class="p">});</span>
+</code></pre>
+
+        </div>
+        
+        <div class="slide ">
+            <h1>Math</h1>
+<p>Inline equations render seamlessly: <span class="math inline">$E = mc^2$</span> or <span class="math inline">$\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$</span></p>
+<p>Perfect for scientific and academic presentations!</p>
+
+        </div>
+        
+        <div class="slide ">
+            <h1>Display Equations</h1>
+<p>Display equations get their own space:</p>
+<div class="math block">
+$$\int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}$$
+</div>
+<p>Complex mathematical notation is fully supported via MathJax.</p>
+
+        </div>
+        
+        <div class="slide ">
+            <h1>Built-in Themes</h1>
+<p>Slidr includes <strong>8 builtin themes</strong>:</p>
+<ul>
+<li><code>minimal-light</code> — Clean and simple</li>
+<li><code>dark-professional</code> — High contrast dark theme</li>
+<li><code>gradient</code> — Vibrant gradient backgrounds</li>
+<li><code>academic</code> — Professional serif typography</li>
+<li><code>code-focused</code> — Optimized for code examples</li>
+<li><code>high-contrast</code> — Maximum readability</li>
+<li><code>corporate-brand</code> — Customizable brand colors</li>
+<li><code>retro</code> — Nostalgic vintage design</li>
+</ul>
+
+        </div>
+        
+        <div class="slide ">
+            <h1>Custom Themes</h1>
+<h2>Create Your Own</h2>
+<p>Themes are just CSS files. Place a <code>theme.css</code> in your <code>deck/</code> folder or specify with <code>--theme</code>:</p>
+<pre><code class="language-bash">slidr<span class="w"> </span>build<span class="w"> </span>deck<span class="w"> </span>--theme<span class="w"> </span>./custom-theme.css
+</code></pre>
+<p>Full control over:</p>
+<ul>
+<li>Colors and gradients</li>
+<li>Typography and fonts</li>
+<li>Layout and spacing</li>
+<li>Animations and transitions</li>
+</ul>
+
+        </div>
+        
+        <div class="slide ">
+            <h1>Navigation</h1>
+<p>Typical <strong>keyboard shortcuts</strong> for presenting:</p>
+<ul>
+<li><strong>Arrow keys</strong> → Next/Previous slide</li>
+<li><strong>Space bar</strong> → Next slide</li>
+<li><strong>Home/End</strong> → First/Last slide</li>
+</ul>
+<p><strong>On-screen controls</strong> for clicking through slides</p>
+<p><strong>Slide counter</strong> shows your progress</p>
+
+        </div>
+        
+        <div class="slide ">
+            <h1>Project Structure</h1>
+<pre><code>my-presentation/
+├── deck/
+│   ├── deck.md         # Your slides (markdown)
+│   ├── theme.css       # Optional custom theme
+│   └── index.html      # Generated output
+</code></pre>
+<p>Simple and organized. Everything in one place.</p>
+
+        </div>
+        
+        <div class="slide ">
+            <h1>Why Slidr?</h1>
+<p><strong>Focus on content</strong>, not formatting:</p>
+<ul>
+<li>Write in <strong>markdown</strong> you already know</li>
+<li>No PowerPoint or Keynote required</li>
+<li>Version control friendly (it's just text!)</li>
+<li>Fast workflow with live preview</li>
+<li>Beautiful results out of the box</li>
+</ul>
+
+        </div>
+        
+        <div class="slide ">
+            <h1>Features at a Glance</h1>
+<ul>
+<li>✨ <strong>Simple:</strong> Markdown → HTML, that's it</li>
+<li>⚡ <strong>Fast:</strong> Live preview with instant reload</li>
+<li>🔧 <strong>Customizable:</strong> Create your own themes with CSS</li>
+<li>📊 <strong>Rich content:</strong> Math, code, images, tables</li>
+<li>🤖 <strong>AI-Powered:</strong> Use the theme creator skill for custom designs</li>
+</ul>
+
+        </div>
+        
+        <div class="slide ">
+            <h1>AI Theme Creation</h1>
+<p>Slidr includes an <strong>AI skill</strong> called <code>slidr-theme-creator</code> for generating custom CSS themes:</p>
+<p><strong>Example requests:</strong></p>
+<ul>
+<li>&quot;Create a dark theme with purple gradients for tech talks&quot;</li>
+<li>&quot;Generate a minimal corporate theme using our brand colors: #0066cc and #003d7a&quot;</li>
+<li>&quot;Make a high-contrast theme optimized for code presentations&quot;</li>
+</ul>
+<p>The skill understands:</p>
+<ul>
+<li>Brand color palettes and corporate identity</li>
+<li>Typography and layout preferences</li>
+<li>Accessibility requirements</li>
+<li>Modern design patterns</li>
+</ul>
+
+        </div>
+        
+        <div class="slide ">
+            <h1>Get Started Today</h1>
+<h2>Install</h2>
+<pre><code class="language-bash">pip<span class="w"> </span>install<span class="w"> </span>slidr
+</code></pre>
+<h2>Create</h2>
+<pre><code class="language-bash">slidr<span class="w"> </span>new<span class="w"> </span>presentation
+</code></pre>
+<h2>Present</h2>
+<pre><code class="language-bash"><span class="nb">cd</span><span class="w"> </span>awesome-presentation
+slidr<span class="w"> </span>serve<span class="w"> </span>deck
+</code></pre>
+<p>Start creating beautiful presentations with markdown</p>
+
+        </div>
+        
+    </div>
+
+    <div class="controls">
+        <button id="prev-btn" onclick="previousSlide()" aria-label="Previous slide">&lsaquo;</button>
+        <button id="next-btn" onclick="nextSlide()" aria-label="Next slide">&rsaquo;</button>
+    </div>
+
+    <div class="slide-counter">
+        <span id="current-slide">1</span> / <span id="total-slides">22</span>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            document.getElementById('current-slide').textContent = currentSlide + 1;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function previousSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                previousSlide();
+            }
+        });
+    </script>
+    
+</body>
+</html>
