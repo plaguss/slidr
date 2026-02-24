@@ -56,9 +56,12 @@ jobs:
         with:
           enable-cache: true
 
+      - name: Install dependencies
+        run: uv sync --all-groups
+
       - run: mkdir coverage
 
-      - run: uv run --all-extras coverage run --source=src --omit='*/tests/*' -m pytest
+      - run: uv run coverage run -m pytest
         env:
           COVERAGE_FILE: coverage/.coverage.${{ runner.os }}-py${{ matrix.python-version }}
 
