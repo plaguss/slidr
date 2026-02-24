@@ -36,7 +36,7 @@ jobs:
       - name: Install dependencies
         run: uv sync --all-groups
 
-      - run: ty check
+      - run: uvx ty check
 
   test:
     name: test on ${{ matrix.python-version }}
@@ -45,7 +45,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.11", "3.12", "3.13", "3.14"]
+        python-version: ["3.13", "3.14"]
     env:
       UV_PYTHON: ${{ matrix.python-version }}
       CI: true

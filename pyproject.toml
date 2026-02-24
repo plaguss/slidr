@@ -6,7 +6,7 @@ readme = "README.md"
 authors = [
     { name = "Agustín Piqueres", email = "agustin.piqueres@gmail.com" }
 ]
-requires-python = ">=3.11"
+requires-python = ">=3.13"
 dependencies = [
     "jinja2>=3.1.6",
     "markdown-it-py[plugins]>=4.0.0",
