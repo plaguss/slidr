@@ -1,27 +1,29 @@
 # slidr
 
-Slide generator with markdown.
+Create beautiful slide decks from markdown. Just write your slides in markdown, and slidr handles the rest.
 
-## For users
+## Getting Started
 
-These steps are for people who just want to create and present slides. You do not need a Python dev setup.
+You can use slidr in two ways:
 
-### Install (tool)
-Install the CLI once and keep it available on your PATH.
+**Install it globally** (recommended if you'll use it regularly):
+
 ```bash
 uv tool install slidr
 ```
 
-### Run without installing
-Use this if you only need `slidr` occasionally or just want it to run without pointing to a specific directory.
+**Or run it on the fly** (if you're just trying it out):
+
 ```bash
 uvx slidr new my-deck
 uvx slidr build my-deck/deck
 uvx slidr serve my-deck/deck -p 8000
 ```
 
-### Basic workflow
+Either way, here's the typical workflow:
+
 Create a project, build HTML, and run a local preview server.
+
 ```bash
 slidr new my-deck
 cd my-deck
@@ -29,12 +31,29 @@ slidr build deck
 slidr serve deck -p 8000
 ```
 
-Slides are written in `deck/deck.md` using `---` as slide separators. The build step generates `deck/index.html`.
+Write your slides in `deck/deck.md` using `---` to separate them. When you build, slidr generates an `index.html` file you can open in any browser.
 
-### Customization
+## Themes
 
-#### Custom Themes
-Create a `theme.css` file in your `deck/` directory to customize the appearance:
+Slidr comes with a collection of beautiful built-in themes. Use them by specifying the theme in your markdown front matter:
+
+```markdown
+---
+theme: default
+---
+# First Slide
+```
+
+### Built-in Themes
+
+| | |
+|---|---|
+| ![default](https://raw.githubusercontent.com/plaguss/slidr/main/docs/images/default.png) `default` | ![minimal-light](https://raw.githubusercontent.com/plaguss/slidr/main/docs/images/minimal-light.png) `minimal-light` |
+| ![dark-professional](https://raw.githubusercontent.com/plaguss/slidr/main/docs/images/dark-professional.png) `dark-professional` | ![high-contrast](https://raw.githubusercontent.com/plaguss/slidr/main/docs/images/high-contrast.png) `high-contrast` |
+
+### Custom Themes
+
+Want to make something your own? Create a `theme.css` file in your `deck/` directory:
 
 ```bash
 # Your project structure
@@ -45,20 +64,10 @@ my-deck/
     index.html
 ```
 
-You can also use built-in themes by specifying them in front matter:
-```markdown
----
-theme: dark-professional
----
-# First Slide
-```
+#### Using Web Fonts
 
-Available built-in themes: `default`, `dark-professional`, `minimal-light`, `corporate-brand`, `high-contrast`, `code-focused`, `academic`, `gradient`, `retro`.
+Want to use custom fonts? It's easy. Add the font definitions to your `theme.css`:
 
-#### Custom Fonts
-To use custom web fonts in your theme:
-
-1. **Define fonts in your CSS** (e.g., `deck/theme.css`):
 ```css
 /* Apply fonts to elements */
 html, body {
@@ -74,13 +83,11 @@ html, body {
 }
 ```
 
-2. **Font loading is handled automatically** - Slidr's template includes popular web fonts preloaded. If you need additional fonts, you'll need to modify the `slides.html` template to add `<link>` tags.
+Slidr's template includes popular web fonts by default. If you need fonts that aren't included yet, feel free to open a PR—we can add them! Just note that font links need to be added to the HTML template (not as`@import` in CSS, as that doesn't work reliably with inline styles).
 
-**Important**: Do not use `@import` statements in your CSS for web fonts, as they don't work reliably in inline styles. Font links must be added to the HTML template.
+## Configuration
 
-#### Front Matter Configuration
-
-Configure your deck with YAML front matter at the top of your markdown file. Front matter must be placed at the very beginning of the file, enclosed by `---` delimiters:
+Customize your deck using front matter at the top of your markdown file. It's a simple YAML block that controls how your slides look and behave:
 
 ```markdown
 ---
@@ -94,92 +101,65 @@ code_highlight: monokai
 Content starts here...
 ```
 
-**Available Front Matter Fields:**
+### Options
 
-- **`theme`** (string) - Specify which theme to use for your slides
-  - Built-in themes: `default`, `dark-professional`, `minimal-light`, `corporate-brand`, `high-contrast`, `code-focused`, `academic`, `gradient`, `retro`
-  - Custom themes: Path to a CSS file (e.g., `custom-theme.css`, `./themes/corporate.css`)
-  - Priority order: CLI `--theme` argument > front matter `theme` > `deck/theme.css` > default theme
+- **`theme`** — Which theme to use
+  - Built-in: `default`, `minimal-light`, `dark-professional`, `high-contrast`
+  - Custom: Path to your own CSS file (e.g., `custom-theme.css`)
+  - Priority: CLI argument > front matter > local `deck/theme.css` > default
 
-- **`title`** (string) - Set the HTML page title (appears in browser tab)
-  - Default: `"Slide Deck"`
+- **`title`** — Browser tab title (default: `"Slide Deck"`)
   - Example: `title: Introduction to Python`
 
-- **`align`** (string) - Control text alignment for all slides
-  - Valid values: `left`, `center`, `right`
-  - Default: `left`
+- **`align`** — Text alignment for all slides (`left`, `center`, `right`; default: `left`)
   - Example: `align: center`
 
-- **`code_highlight`** (string) - Configure syntax highlighting for code blocks
-  - Accepts any [Pygments style name](https://pygments.org/styles/) (e.g., `monokai`, `github`, `dracula`, `solarized-dark`, `nord`)
-  - Disable highlighting: Use `off`, `false`, `no`, or `none`
-  - Default: No highlighting unless specified
-  - Example: `code_highlight: monokai`
+- **`code_highlight`** — Syntax highlighting for code blocks
+  - Options: Any [Pygments style name](https://pygments.org/styles/) like `monokai`, `github`, `dracula`, `solarized-dark`, `nord`
+  - Disable: `off`, `false`, `no`, or `none`
+  - Example: `code_highlight: dracula`
 
-**Example with all fields:**
+## AI-Powered Theme Creation
 
-```markdown
----
-theme: dark-professional
-title: Advanced Python Techniques
-align: left
-code_highlight: dracula
----
+Want a custom theme without writing CSS? Use the **slidr-theme-creator** AI skill to generate one based on your needs:
 
-# Welcome
-This is my first slide...
-
----
-
-# Code Example
-```python
-def hello():
-    print("Hello, world!")
-```
-```
-
-#### AI-Powered Theme Creation
-
-Slidr includes the **slidr-theme-creator** AI skill that can generate custom CSS themes based on your requirements:
-
-**Example requests to AI agents:**
 - "Create a dark theme with blue gradients and modern fonts"
 - "Generate a corporate theme using brand colors #0066cc and #003d7a"
 - "Make a minimal light theme optimized for readability"
 - "Design a code-focused theme with syntax highlighting colors"
 
-The skill understands design patterns, accessibility requirements, brand identity, and modern web aesthetics. See [.agents/skills/slidr-theme-creator/SKILL.md](.agents/skills/slidr-theme-creator/SKILL.md) for details.
+The skill handles design patterns, accessibility, brand identity, and modern web aesthetics. Learn more in [.agents/skills/slidr-theme-creator/SKILL.md](.agents/skills/slidr-theme-creator/SKILL.md).
 
 ## Development
 
-These steps are for contributors who are changing the codebase or running tests.
+Want to contribute or run slidr locally? Here's how to set up:
 
-### Install (editable)
-Create a local virtual environment and install in editable mode.
+**Install in development mode:**
+
 ```bash
 uv venv
 uv pip install -e .
 ```
 
-### Test
-Install dev dependencies and run the test suite with pytest.
+**Run tests:**
+
 ```bash
 uv pip install -e .[dev]
 pytest
 ```
 
-### pre-commit
-Install hooks to keep formatting and checks consistent before commits.
+**Set up pre-commit hooks**:
+
 ```bash
 uv pip install pre-commit
 pre-commit install
 pre-commit run --all-files
 ```
 
-## Alternatives
+## See Also
 
-I just wanted to use my own for no special reason, but these are some alternatives (almost surely they do the same or better).
+There are some great alternatives out there, definitely check them out!
 
-- https://sli.dev/
-- https://marpit.marp.app/
-- https://martenbe.github.io/mkslides/#/
+- <https://sli.dev/>
+- <https://marpit.marp.app/>
+- <https://martenbe.github.io/mkslides/#/>
